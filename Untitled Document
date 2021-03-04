@@ -1,0 +1,25 @@
+import re
+import os
+import time
+xXx = 1
+filename = "/root/LinSSID.datalog"
+string1 = "4"
+string2 = "9"
+#pattern10 = re.compile(r'(\d{3})-(\d{3})-(\d{4})')
+#pattern10 = re.compile(r'\b\par(en|ro)?t\b')
+pattern10 = re.compile('\s-13\s|\s-14\s|\s-15\s|\s-16\s|\s-17\s|\s-18\s|-19\s|\s-20\s|\s-21\s|\s-22\s|\s-23\s|\s-24\s|\s-25\s|\s-26\s|\s-27\s|\s-28\s|\s-29\s|\s-30\s|\s-31\s|\s-32\s|\s-33\s|\s-34\s|\s-35\s|\s-36\s|\s-37\s|\s-38\s|\s-39\s|\s-40\s|\s-41\s|\s-42\s|\s-43\s|\s-44\s|\s-45\s|\s-46\s|\s-47\s|\s-48\s|\s-49\s|\s-50\s|\s-51\s|\s-52\s|\s-53\s|\s-54\s|\s-55\s|\s-56\s|\s-57\s|\s-58\s|\s-59\s|\s-60\s|\s-61\s')
+while xXx <= 2:
+ with open (filename, 'rt') as myfile:
+  for line in myfile:
+   if pattern10.search(line) != None:
+    os.system("echo -e '\xff\x01\x01' > /dev/ttyUSB0")
+    print(line)
+  else:
+    time.sleep(60)
+    #print("sleep")
+    #os.system("echo -e '\xff\x01\x01' > /dev/ttyUSB0")
+    #print(ttto)
+    #time.sleep(5)
+    #ttto = os.system("echo -e '\xff\x01\x00' > /dev/ttyUSB0")
+    #time.sleep(1)
+    #print(tttof)
