@@ -16,7 +16,7 @@ while xXx <= 2:
    if pattern10.search(line) != None:
     #os.system("echo -e '\xff\x01\x01' > /dev/ttyUSB0")
     print(line)
-    while xXx <= 3:
+    xXx = 3:
 #  else:
 #    time.sleep(60)
 #    #print("sleep")
